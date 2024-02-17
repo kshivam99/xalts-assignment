@@ -10,7 +10,6 @@ function Navbar({
 }) {
   const isSmallScreen = useMediaQuery("(max-width: 640px)");
   const user = JSON.parse(localStorage.getItem("user")!);
-  //@ts-ignore
   const name = user.displayName;
 
   const signOut = async () => {

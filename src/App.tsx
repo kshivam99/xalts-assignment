@@ -1,18 +1,11 @@
 import React, { useEffect, useState } from "react";
 import Navbar from "./components/Navbar";
+import useAuth from "./hooks/useAuth";
 import { Dashboard } from "./pages/Dashboard";
 import Login from "./pages/Login";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
-
-  useEffect(()=>{
-    const token = localStorage.getItem('token');
-    console.log(token?.length);
-    if(token && token?.length > 0){
-      setIsAuthenticated(true);
-    }
-  }, [])
+  const [isAuthenticated, setIsAuthenticated] = useAuth();
   
   return (
     <div className="App">
