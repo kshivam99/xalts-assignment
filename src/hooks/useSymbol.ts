@@ -5,14 +5,11 @@ export interface Option {
   label: string;
 }
 
-const useSelectedSymbol = (): [
+const useSelectedSymbol = (defaultValue: Option): [
   Option,
   React.Dispatch<React.SetStateAction<Option>>
 ] => {
-  const [selectedSymbol, setSelectedSymbol] = useState<Option>({
-    value: "bitcoin",
-    label: "Bitcoin",
-  });
+  const [selectedSymbol, setSelectedSymbol] = useState<Option>(defaultValue);
 
   return [selectedSymbol, setSelectedSymbol];
 };

@@ -1,15 +1,17 @@
-import { useState } from "react";
-import { Container, Flex, Button } from "@mantine/core";
-import Filter from "../components/Filter";
+import React from "react";
+import { Container } from "@mantine/core";
+import Chart from "../components/Chart";
+
+const OPTIONS = [
+  { value: "bitcoin", label: "Bitcoin" },
+  { value: "ethereum", label: "Ethereum" },
+  { value: "solana", label: "Solana" },
+];
 
 export function Dashboard() {
-
   return (
     <Container size={"responsive"}>
-      <Flex gap="md" direction="row" align="center" mb={"50px"}>
-        <Filter />
-      </Flex>
-    {/* <div>Chart</div> */}
+      <Chart tokens={OPTIONS} />
     </Container>
   );
 }

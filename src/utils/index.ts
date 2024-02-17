@@ -7,26 +7,26 @@ export const timestampToFullDate = (timestamp: number) => {
 };
 
 export const clubPriceToDaily = (dataArray: PriceData[]) => {
-  const groupedData: Record<number, PriceData> = {};
+  const groupedData: Record<string, PriceData> = {};
   dataArray.forEach((item) => {
-    if (!groupedData[Number(item.time)]) {
-      groupedData[Number(item.time)] = {
+    if (!groupedData[item.time]) {
+      groupedData[item.time] = {
         open: item.open,
         high: item.high,
         low: item.low,
         close: item.close,
-        time: 0,
+        time: 0
       };
     } else {
-      groupedData[Number(item.time)].high = Math.max(
-        groupedData[Number(item.time)].high,
+      groupedData[item.time].high = Math.max(
+        groupedData[item.time].high,
         item.high
       );
-      groupedData[Number(item.time)].low = Math.min(
-        groupedData[Number(item.time)].low,
+      groupedData[item.time].low = Math.min(
+        groupedData[item.time].low,
         item.low
       );
-      groupedData[Number(item.time)].close = item.close;
+      groupedData[item.time].close = item.close;
     }
   });
 
