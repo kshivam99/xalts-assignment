@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import Navbar from "./components/Navbar";
 import useAuth from "./hooks/useAuth";
 import { Dashboard } from "./pages/Dashboard";
