@@ -42,7 +42,7 @@ const Chart: React.FC<ChartProps> = ({ tokens }) => {
   if (error) return <div>Error: {error}</div>;
 
   return (
-    <Flex direction={"column"}>
+    <Flex direction={"column"} mr={10}>
       <Flex gap="md" direction="row" align="center" mb={"50px"}>
         <Flex
           gap="md"
@@ -58,7 +58,7 @@ const Chart: React.FC<ChartProps> = ({ tokens }) => {
           />
           <Flex
             direction={isSmallScreen ? "column" : "row"}
-            gap="xl"
+            gap={isSmallScreen ? 'md': 'xl'}
             justify="space-evenly"
             mt={isSmallScreen ? 0 : "30px"}
             ml={isSmallScreen ? 0 : "40px"}
