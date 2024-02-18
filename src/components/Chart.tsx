@@ -94,7 +94,7 @@ const Chart: React.FC<ChartProps> = ({ tokens }) => {
       <ResponsiveContainer width="100%" height={400}>
         <LineChart width={800} height={400} data={data[symbol.value]}>
           <CartesianGrid strokeDasharray="3 3" />
-          <XAxis dataKey="name" />
+          <XAxis dataKey="time" />
           <YAxis domain={["dataMin", "dataMax"]} />
           <Tooltip />
           <Legend />
